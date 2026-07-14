@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://1l4xq2r70jl8" path="res://textures/buttons.png" id="2_rwmlf"]
 [ext_resource type="Texture2D" uid="uid://c5cy2urbx3txa" path="res://textures/face.png" id="2_ukpl6"]
 [ext_resource type="AudioStream" uid="uid://v1bytu3fcx3x" path="res://audios/A.wav" id="3_i3uas"]
+[ext_resource type="Texture2D" uid="uid://c64smkv3cltaj" path="res://github.png" id="4_fq3fg"]
 [ext_resource type="AudioStream" uid="uid://d2sofi68n5qkb" path="res://audios/B.wav" id="4_ukpl6"]
 [ext_resource type="AudioStream" uid="uid://ddbjqddmod5on" path="res://audios/Up.wav" id="5_fq3fg"]
 [ext_resource type="AudioStream" uid="uid://3y1c0ku0b0cv" path="res://audios/Down.wav" id="6_rvg35"]
@@ -94,6 +95,14 @@ region = Rect2(80, 0, 16, 16)
 atlas = ExtResource("2_rwmlf")
 region = Rect2(80, 16, 16, 16)
 
+[sub_resource type="GDScript" id="GDScript_ukpl6"]
+script/source = "extends TextureButton
+
+
+func _pressed() -> void:
+	OS.shell_open(\"https://github.com/xiSage/cat-machine\")
+"
+
 [sub_resource type="Animation" id="Animation_6e7f2"]
 length = 0.001
 tracks/0/type = "value"
@@ -108,11 +117,23 @@ tracks/0/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GithubButton:offset_transform_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_rwmlf"]
 resource_name = "a"
 length = 2.50005
-step = 0.25
+step = 0.125
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -140,11 +161,23 @@ tracks/1/keys = {
 "update": 1,
 "values": [1, 2, 1, 2, 1, 2, 1, 2, 0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GithubButton:offset_transform_position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.5, 0.625, 1, 1.125, 1.5, 1.625),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [-1.0, 0.0, -1.0, 0.0, -1.0, 0.0, -1.0, 0.0]
+}
 
 [sub_resource type="Animation" id="Animation_blttg"]
 resource_name = "b"
 length = 2.50005
-step = 0.25
+step = 0.125
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -172,10 +205,22 @@ tracks/1/keys = {
 "update": 1,
 "values": [1, 2, 1, 2, 1, 2, 1, 2, 0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GithubButton:offset_transform_position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.5, 0.625, 1, 1.125, 1.5, 1.625),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [-1.0, 0.0, -1.0, 0.0, -1.0, 0.0, -1.0, 0.0]
+}
 
 [sub_resource type="Animation" id="Animation_i3uas"]
 resource_name = "down"
-step = 0.25
+step = 0.125
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -202,6 +247,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [3, 0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GithubButton:offset_transform_position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.125),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [-1.0, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_ukpl6"]
@@ -234,6 +291,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [3, 0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GithubButton:offset_transform_position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.125),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [-1.0, 0.0]
+}
 
 [sub_resource type="Animation" id="Animation_fq3fg"]
 resource_name = "right"
@@ -265,6 +334,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [3, 0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GithubButton:offset_transform_position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.125),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [-1.0, 0.0]
+}
 
 [sub_resource type="Animation" id="Animation_rvg35"]
 resource_name = "up"
@@ -295,6 +376,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [3, 0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GithubButton:offset_transform_position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.125),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [-1.0, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6r2pn"]
@@ -387,6 +480,15 @@ shortcut = SubResource("Shortcut_rvg35")
 shortcut_in_tooltip = false
 texture_normal = SubResource("AtlasTexture_rvg35")
 texture_pressed = SubResource("AtlasTexture_6e7f2")
+
+[node name="GithubButton" type="TextureButton" parent="." unique_id=1768644325]
+offset_top = 136.0
+offset_right = 24.0
+offset_bottom = 160.0
+offset_transform_enabled = true
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_fq3fg")
+script = SubResource("GDScript_ukpl6")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=226844785]
 playback_type = 1
