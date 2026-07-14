@@ -491,10 +491,8 @@ texture_normal = ExtResource("4_fq3fg")
 script = SubResource("GDScript_ukpl6")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=226844785]
-playback_type = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=809090336]
-audio_max_polyphony = 1
 libraries/ = SubResource("AnimationLibrary_6r2pn")
 
 [connection signal="pressed" from="ButtonA" to="AnimationPlayer" method="stop"]
